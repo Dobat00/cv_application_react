@@ -1,7 +1,7 @@
 import Forms from "./Forms";
 
-function Button({texto}) {
-  return <button onClick={Forms}>{texto}</button>;
+function Button({texto, func}) {
+  return <button onClick={func}>{texto}</button>;
 }
 
 

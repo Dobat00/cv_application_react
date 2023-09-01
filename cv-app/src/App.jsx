@@ -5,9 +5,10 @@ import Forms from "./components/Forms";
 function App() {
   return(
     <div className="content">
-      <Button texto='Criar novo curriculo'></Button>
+      <Forms valor1={'nome'} valor2={'email'} valor3={'telefone'}></Forms>
     </div>
   )
 }
+
 
 export default App;
