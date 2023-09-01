@@ -1,9 +1,8 @@
-function Button() {
-  return <button onClick={sayHello}></button>;
+import Forms from "./Forms";
+
+function Button({texto}) {
+  return <button onClick={Forms}>{texto}</button>;
 }
 
-function sayHello() {
-  console.log("hello!");
-}
 
 export default Button;
