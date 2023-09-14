@@ -10,29 +10,35 @@ const objeto_teste = { nome: "matheus", idade: 23, email: "@gmail.com" };
 
 function App() {
   const [curr, setCurr] = useState({
-    informacoesPessoais: {},
-    educacao: {},
-    profissional: {},
+    nomePessoal: "",
+    emailPessoal: "",
+    telefonePessoal: "",
+    nomeEdu: "",
+    grauEstudo: "",
+    anoConclusao: "",
+    nomeEmpresa: "",
+    cargo: "",
+    responsabilidade: "",
+    ingresso: "",
+    saida: "",
   });
 
   function handleSubmit() {
-    //com esssa versao do setCurr "bruto", o console nao ira logar o objeto atualizado, porem, o curriculo em html sera gerado normalmente
-    // setCurr({
-    //   informacoesPessoais: info[0],
-    //   educacao: info[1],
-    //   profissional: info[2],
-    // });
-    const nextPessoal = (curr.informacoesPessoais = info[0]);
-    const nextEducacao = (curr.educacao = info[1]);
-    const nextProfissional = (curr.profissional = info[2]);
+    let inputClass = document.getElementsByClassName("input");
     setCurr({
-      informacoesPessoais: nextPessoal,
-      educacao: nextEducacao,
-      profissional: nextProfissional,
+      nomePessoal: inputClass[0].value,
+      emailPessoal: inputClass[1].value,
+      telefonePessoal: inputClass[2].value,
+      nomeEdu: inputClass[3].value,
+      grauEstudo: inputClass[4].value,
+      anoConclusao: inputClass[5].value,
+      nomeEmpresa: inputClass[6].value,
+      cargo: inputClass[7].value,
+      responsabilidade: inputClass[8].value,
+      ingresso: inputClass[9].value,
+      saida: inputClass[10].value,
     });
     console.log(curr);
-    console.log(curr.informacoesPessoais.nome);
-    console.log(curr.informacoesPessoais[0]);
   }
   return (
     <div className="content">
@@ -42,17 +48,17 @@ function App() {
       <br></br>
       <Button text="Salvar Curriculo" onClick={handleSubmit} />
       <Cv
-        nome={curr.informacoesPessoais.nome}
-        email={curr.informacoesPessoais.email}
-        telefone={curr.informacoesPessoais.telefone}
-        escola={curr.educacao.nomeEscola}
-        grauDeEstudo={curr.educacao.grauEstudo}
-        anoDeConclusao={curr.educacao.anoConclusao}
-        nomeEmpresa={curr.profissional.nomeEmpresa}
-        cargo={curr.profissional.cargo}
-        responsabilidade={curr.profissional.responsabilidade}
-        ingresso={curr.profissional.entrada}
-        saida={curr.profissional.saida}
+        nome={curr.nomePessoal}
+        email={curr.emailPessoal}
+        telefone={curr.telefonePessoal}
+        escola={curr.nomeEdu}
+        grauDeEstudo={curr.grauEstudo}
+        anoDeConclusao={curr.anoConclusao}
+        nomeEmpresa={curr.nomeEmpresa}
+        cargo={curr.cargo}
+        responsabilidade={curr.responsabilidade}
+        ingresso={curr.ingresso}
+        saida={curr.saida}
       />
     </div>
   );

@@ -3,7 +3,11 @@ import { useState } from "react";
 
 let info = [];
 export function FormsPessoal() {
-  const [pessoal, setPessoal] = useState({ nome: "", email: "", telefone: "" });
+  const [pessoal, setPessoal] = useState({
+    nome: null,
+    email: null,
+    telefone: null,
+  });
   function handleSubmit() {
     console.log(pessoal);
     info.push(pessoal);
@@ -16,6 +20,7 @@ export function FormsPessoal() {
       <input
         type="text"
         id="inputNome"
+        className="input"
         onChange={(event) =>
           setPessoal({ ...pessoal, nome: event.target.value })
         }
@@ -25,6 +30,7 @@ export function FormsPessoal() {
       <input
         type="text"
         id="inputEmail"
+        className="input"
         onChange={(event) =>
           setPessoal({ ...pessoal, email: event.target.value })
         }
@@ -34,20 +40,21 @@ export function FormsPessoal() {
       <input
         type="text"
         id="inputTelefone"
+        className="input"
         onChange={(event) =>
           setPessoal({ ...pessoal, telefone: event.target.value })
         }
       ></input>
-      <Button text="Salvar informacoes pessoais" onClick={handleSubmit} />
+      {/* <Button text="Salvar informacoes pessoais" onClick={handleSubmit} /> */}
     </div>
   );
 }
 
 export function FormsEd() {
   const [edu, setEdu] = useState({
-    nomeEscola: "",
-    grauEstudo: "",
-    anoConclusao: "",
+    nomeEscola: null,
+    grauEstudo: null,
+    anoConclusao: null,
   });
 
   function handleSubmit() {
@@ -61,6 +68,7 @@ export function FormsEd() {
 
       <label>Local onde estudou</label>
       <input
+        className="input"
         type="text"
         id="inputNomeEscola"
         onChange={(event) => setEdu({ ...edu, nomeEscola: event.target.value })}
@@ -68,6 +76,7 @@ export function FormsEd() {
       <br></br>
       <label>Grau de estudo</label>
       <input
+        className="input"
         type="text"
         id="inputGrauEstudo"
         onChange={(event) => setEdu({ ...edu, grauEstudo: event.target.value })}
@@ -75,24 +84,25 @@ export function FormsEd() {
       <br></br>
       <label>Ano em que concluiu os estudos</label>
       <input
+        className="input"
         type="text"
         id="inputAnoConclusao"
         onChange={(event) =>
           setEdu({ ...edu, anoConclusao: event.target.value })
         }
       ></input>
-      <Button onClick={handleSubmit} text="Salvar informacoes de educacao" />
+      {/* <Button onClick={handleSubmit} text="Salvar informacoes de educacao" /> */}
     </>
   );
 }
 
 export function FormsExp() {
   const [exp, setExp] = useState({
-    nomeEmpresa: "",
-    cargo: "",
-    responsabilidade: "",
-    entrada: "",
-    saida: "",
+    nomeEmpresa: null,
+    cargo: null,
+    responsabilidade: null,
+    entrada: null,
+    saida: null,
   });
 
   function handleSubmit() {
@@ -107,6 +117,7 @@ export function FormsExp() {
 
       <label>Nome da empresa</label>
       <input
+        className="input"
         type="text"
         id="inputNomeEmpresa"
         onChange={(event) =>
@@ -116,6 +127,7 @@ export function FormsExp() {
       <br></br>
       <label>Cargo</label>
       <input
+        className="input"
         type="text"
         id="inputCargo"
         onChange={(event) => setExp({ ...exp, cargo: event.target.value })}
@@ -123,6 +135,7 @@ export function FormsExp() {
       <br></br>
       <label>Responsabilidade</label>
       <input
+        className="input"
         type="text"
         id="inputResponsabilidade"
         onChange={(event) =>
@@ -132,18 +145,20 @@ export function FormsExp() {
       <br></br>
       <label>Data de ingresso</label>
       <input
+        className="input"
         type="text"
         id="inputDataIngresso"
         onChange={(event) => setExp({ ...exp, entrada: event.target.value })}
       />
       <label>Data de saida</label>
       <input
+        className="input"
         type="text"
         id="inputDataSaida"
         onChange={(event) => setExp({ ...exp, saida: event.target.value })}
       />
       <br></br>
-      <Button onClick={handleSubmit} text="Salvar informacoes profissionais" />
+      {/* <Button onClick={handleSubmit} text="Salvar informacoes profissionais" /> */}
     </>
   );
 }
