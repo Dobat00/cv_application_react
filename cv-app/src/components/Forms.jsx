@@ -2,9 +2,9 @@ import { Button } from "./Button";
 import { useState } from "react";
 
 let info = [];
-export function FormsPessoal() {
+export function FormsPessoal({ value }) {
   const [pessoal, setPessoal] = useState({
-    nome: null,
+    nome: "",
     email: null,
     telefone: null,
   });
@@ -19,6 +19,7 @@ export function FormsPessoal() {
       <label>nome</label>
       <input
         type="text"
+        value={value}
         id="inputNome"
         className="input"
         onChange={(event) =>
@@ -57,11 +58,6 @@ export function FormsEd() {
     anoConclusao: null,
   });
 
-  function handleSubmit() {
-    console.log(edu);
-    info.push(edu);
-    console.log(info);
-  }
   return (
     <>
       <h3>Educacao</h3>
@@ -104,13 +100,6 @@ export function FormsExp() {
     entrada: null,
     saida: null,
   });
-
-  function handleSubmit() {
-    console.log(exp);
-    info.push(exp);
-    console.log(info);
-  }
-
   return (
     <>
       <h3>Experiencia profissional</h3>
